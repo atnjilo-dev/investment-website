@@ -1,98 +1,90 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Northstar Capital — V2 Demo</title>
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f4f6fa;color:#172033}
-button,input{font:inherit}.hidden{display:none!important}.app{min-height:100vh}
-.login{min-height:100vh;display:grid;place-items:center;background:linear-gradient(135deg,#0e1728,#1c3653);padding:20px}
-.loginbox{width:min(430px,100%);background:#fff;padding:34px;border-radius:20px;box-shadow:0 25px 70px #0004}.logo{font-size:21px;font-weight:900;margin-bottom:25px}.logo span{color:#22a66f}
-label{display:block;font-size:13px;font-weight:700;margin:16px 0 7px}input{width:100%;padding:13px;border:1px solid #d7dce5;border-radius:10px}button,.btn{border:0;border-radius:10px;padding:13px 17px;font-weight:800;cursor:pointer;background:#1a7f5a;color:white;text-decoration:none}
-.demo{font-size:12px;color:#687386;margin-top:15px;line-height:1.5}.error{color:#b42318;font-size:13px;margin-top:10px}
-header{height:68px;background:#101828;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 5%}.header-right{display:flex;gap:12px;align-items:center}
-.layout{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 68px)}aside{background:#fff;border-right:1px solid #e6e9ef;padding:25px 15px}aside button{display:block;width:100%;background:none;color:#465268;text-align:left;margin:5px 0}aside button.active{background:#eaf6f0;color:#126c4c}
-main{padding:35px 5%;max-width:1300px;width:100%}.top{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:25px}.top h1{margin:0;font-size:30px}.muted{color:#6b7586}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.card{background:#fff;border:1px solid #e7eaf0;border-radius:16px;padding:21px;box-shadow:0 8px 25px #17203308}.metric small{color:#6b7586}.metric strong{display:block;font-size:26px;margin-top:8px}.green{color:#138a5b}.grid2{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin-top:18px}
-table{width:100%;border-collapse:collapse;margin-top:10px}th,td{text-align:left;padding:13px 8px;border-bottom:1px solid #edf0f4;font-size:14px}th{color:#6b7586;font-size:12px}
-canvas{width:100%;height:280px}.pill{display:inline-block;padding:5px 9px;border-radius:99px;background:#eaf6f0;color:#12704e;font-size:12px;font-weight:800}
-.admin-banner{background:#fff5df;border:1px solid #f3d69b;padding:12px 15px;border-radius:12px;margin-bottom:20px;color:#735116}
-.actions{display:flex;gap:10px;flex-wrap:wrap}.secondary{background:#edf1f5;color:#253247}
-@media(max-width:900px){.layout{grid-template-columns:1fr}aside{display:flex;overflow:auto;border-right:0;border-bottom:1px solid #e6e9ef}aside button{min-width:130px}.grid4{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}}
-@media(max-width:600px){.grid4{grid-template-columns:1fr}.top{display:block}.header-right span{display:none}main{padding:25px 4%}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aurvon — a modern capital and investment platform.">
+  <title>Aurvon | Growing Capital. Building Trust.</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="login" class="login">
-<div class="loginbox">
-<div class="logo">NORTHSTAR <span>CAPITAL</span></div>
-<h2>Sign in</h2><p class="muted">Investor & admin demo portal</p>
-<label>Email</label><input id="email" type="email" placeholder="investor@example.com">
-<label>Password</label><input id="password" type="password" placeholder="••••••••">
-<div id="err" class="error"></div>
-<button style="width:100%;margin-top:20px" onclick="login()">Sign in</button>
-<div class="demo"><b>Demo accounts</b><br>Investor: investor@demo.com / demo123<br>Admin: admin@demo.com / admin123</div>
-</div></div>
+  <header class="nav">
+    <a class="brand" href="#"><span class="brand-mark">A</span><span>AURVON</span></a>
+    <nav class="nav-links">
+      <a href="#opportunities">Opportunities</a>
+      <a href="#how">How it works</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="login" href="login.html">Investor login</a>
+      <a class="button button-gold" href="login.html">Get started</a>
+    </div>
+  </header>
 
-<div id="app" class="app hidden">
-<header><div class="logo">NORTHSTAR <span>CAPITAL</span></div><div class="header-right"><span id="roleLabel"></span><button onclick="logout()" class="secondary">Log out</button></div></header>
-<div class="layout"><aside id="nav"></aside><main id="content"></main></div>
-</div>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">PRIVATE CAPITAL • GLOBAL OPPORTUNITIES</p>
+        <h1>Grow your capital with a <em>clearer</em> view of opportunity.</h1>
+        <p class="hero-text">Aurvon is being built as a modern platform for accessing and monitoring diversified investment opportunities across global markets.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#opportunities">Explore opportunities <span>→</span></a>
+          <a class="text-link" href="#how">See how it works</a>
+        </div>
+        <p class="small-note">Investment values can rise or fall. No return is guaranteed.</p>
+      </div>
+      <div class="hero-card">
+        <div class="card-top"><span>PORTFOLIO OVERVIEW</span><span class="dot"></span></div>
+        <div class="balance">R25,480.00</div>
+        <div class="positive">+8.42% <span>illustrative</span></div>
+        <div class="chart">
+          <svg viewBox="0 0 520 180" preserveAspectRatio="none" aria-label="Illustrative portfolio chart">
+            <path class="area" d="M0,155 C45,145 65,160 100,125 S160,130 195,105 S250,120 285,80 S340,95 370,55 S430,70 470,30 S500,42 520,12 L520,180 L0,180 Z"/>
+            <path class="line" d="M0,155 C45,145 65,160 100,125 S160,130 195,105 S250,120 285,80 S340,95 370,55 S430,70 470,30 S500,42 520,12"/>
+          </svg>
+        </div>
+        <div class="chart-footer"><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Today</span></div>
+      </div>
+    </section>
 
-<script>
-const investor={name:"Andile",invested:106500,value:125000,profit:18500,returnPct:17.37};
-const transactions=[
-["INV-1048","Deposit","R25,000","06 Sep 2026","Completed"],
-["INV-1032","Investment","R40,000","28 Aug 2026","Completed"],
-["INV-1009","Deposit","R50,000","01 Aug 2026","Completed"],
-["INV-0992","Withdrawal","R8,500","22 Jul 2026","Completed"]
-];
-const investors=[
-["NS-1001","Andile Njilo","andile@example.com","R125,000","+17.37%","Active"],
-["NS-1002","Demo Investor","investor2@example.com","R74,300","+9.12%","Active"],
-["NS-1003","Sample Client","client@example.com","R31,900","+6.40%","Pending"]
-];
-let role="investor",page="dashboard";
+    <section class="trust-strip">
+      <div><strong>01</strong><span>Clear portfolio visibility</span></div>
+      <div><strong>02</strong><span>Flexible investment choices</span></div>
+      <div><strong>03</strong><span>Designed around transparency</span></div>
+    </section>
 
-function login(){
- const e=document.getElementById("email").value.trim().toLowerCase(), p=document.getElementById("password").value;
- if(e==="investor@demo.com"&&p==="demo123"){role="investor";openApp()}
- else if(e==="admin@demo.com"&&p==="admin123"){role="admin";openApp()}
- else document.getElementById("err").textContent="Use one of the demo accounts shown below.";
-}
-function openApp(){document.getElementById("login").classList.add("hidden");document.getElementById("app").classList.remove("hidden");page="dashboard";render()}
-function logout(){document.getElementById("app").classList.add("hidden");document.getElementById("login").classList.remove("hidden")}
-function setPage(p){page=p;render()}
-function render(){
- document.getElementById("roleLabel").textContent=role==="admin"?"Administrator":"Investor";
- document.getElementById("nav").innerHTML=role==="admin"?adminNav():investorNav();
- document.querySelectorAll("aside button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
- document.getElementById("content").innerHTML=role==="admin"?adminPage():investorPage();
- if(page==="dashboard") drawChart();
-}
-function investorNav(){return `<button data-page="dashboard" onclick="setPage('dashboard')">📊 Dashboard</button><button data-page="portfolio" onclick="setPage('portfolio')">🌍 Portfolio</button><button data-page="transactions" onclick="setPage('transactions')">↔ Transactions</button><button data-page="profile" onclick="setPage('profile')">👤 Profile</button>`}
-function adminNav(){return `<button data-page="dashboard" onclick="setPage('dashboard')">📊 Overview</button><button data-page="investors" onclick="setPage('investors')">👥 Investors</button><button data-page="transactions" onclick="setPage('transactions')">↔ Transactions</button><button data-page="portfolio" onclick="setPage('portfolio')">🌍 Portfolios</button>`}
-function investorPage(){
- if(page==="portfolio")return `<div class="top"><div><h1>My Portfolio</h1><p class="muted">Illustrative holdings for the prototype.</p></div></div><div class="card"><table><tr><th>Asset class</th><th>Allocation</th><th>Value</th><th>Performance</th></tr><tr><td>Global Equities</td><td>40%</td><td>R50,000</td><td class="green">+12.4%</td></tr><tr><td>US Equities</td><td>28%</td><td>R35,000</td><td class="green">+21.7%</td></tr><tr><td>Emerging Markets</td><td>20%</td><td>R25,000</td><td class="green">+14.2%</td></tr><tr><td>Cash</td><td>12%</td><td>R15,000</td><td>—</td></tr></table></div>`;
- if(page==="transactions")return transactionPage("My Transactions",transactions);
- if(page==="profile")return `<div class="top"><div><h1>Profile</h1><p class="muted">Account information.</p></div></div><div class="card"><p><b>Name:</b> Andile Njilo</p><p><b>Email:</b> investor@example.com</p><p><b>Account:</b> NS-1001</p><p><b>Verification:</b> <span class="pill">Demo verified</span></p><div class="admin-banner">Production accounts should use real identity verification and appropriate security controls.</div></div>`;
- return `<div class="top"><div><h1>Good afternoon, ${investor.name} 👋🏾</h1><p class="muted">Here's your portfolio overview.</p></div><div class="actions"><button onclick="alert('Demo only — no real deposit is processed.')">Deposit</button><button class="secondary" onclick="alert('Demo only — no real withdrawal is processed.')">Withdraw</button></div></div><div class="grid4"><div class="card metric"><small>Portfolio value</small><strong>R125,000</strong></div><div class="card metric"><small>Total invested</small><strong>R106,500</strong></div><div class="card metric"><small>Profit / loss</small><strong class="green">+R18,500</strong></div><div class="card metric"><small>Total return</small><strong class="green">+17.37%</strong></div></div><div class="grid2"><div class="card"><h3>Portfolio growth</h3><canvas id="chart"></canvas></div><div class="card"><h3>Recent activity</h3>${transactions.slice(0,3).map(t=>`<p><b>${t[1]}</b> — ${t[2]}<br><small class="muted">${t[3]} · ${t[4]}</small></p>`).join("")}</div></div>`;
-}
-function transactionPage(title,data){return `<div class="top"><div><h1>${title}</h1><p class="muted">Demo transaction records.</p></div></div><div class="card"><table><tr><th>ID</th><th>Type</th><th>Amount</th><th>Date</th><th>Status</th></tr>${data.map(t=>`<tr>${t.map((x,i)=>`<td>${i===4?`<span class="pill">${x}</span>`:x}</td>`).join("")}</tr>`).join("")}</table></div>`}
-function adminPage(){
- if(page==="investors")return `<div class="top"><div><h1>Investors</h1><p class="muted">Demo investor records.</p></div><button onclick="alert('Production flow would open a secure onboarding form.')">Add investor</button></div><div class="card"><table><tr><th>Account</th><th>Name</th><th>Email</th><th>Portfolio</th><th>Return</th><th>Status</th></tr>${investors.map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td><td>${x[2]}</td><td>${x[3]}</td><td class="green">${x[4]}</td><td><span class="pill">${x[5]}</span></td></tr>`).join("")}</table></div>`;
- if(page==="transactions")return transactionPage("All Transactions",transactions.concat([["INV-0981","Deposit","R12,000","18 Jul 2026","Completed"]]));
- if(page==="portfolio")return `<div class="top"><div><h1>Portfolio Management</h1><p class="muted">High-level demo allocation.</p></div></div><div class="card"><table><tr><th>Asset class</th><th>Allocation</th><th>Illustrative value</th></tr><tr><td>Global Equities</td><td>40%</td><td>R92,000</td></tr><tr><td>US Equities</td><td>28%</td><td>R64,400</td></tr><tr><td>Emerging Markets</td><td>20%</td><td>R46,000</td></tr><tr><td>Cash</td><td>12%</td><td>R27,600</td></tr></table></div>`;
- return `<div class="admin-banner"><b>Admin demo mode.</b> No real money movement or investor returns are connected.</div><div class="top"><div><h1>Platform Overview</h1><p class="muted">Administrator dashboard.</p></div></div><div class="grid4"><div class="card metric"><small>Investors</small><strong>3</strong></div><div class="card metric"><small>Assets under demo management</small><strong>R231,200</strong></div><div class="card metric"><small>Pending verification</small><strong>1</strong></div><div class="card metric"><small>Transactions</small><strong>5</strong></div></div><div class="grid2"><div class="card"><h3>Latest investors</h3><table><tr><th>Account</th><th>Name</th><th>Value</th></tr>${investors.map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td><td>${x[3]}</td></tr>`).join("")}</table></div><div class="card"><h3>Important</h3><p class="muted">Before production, connect balances to verified custodial/broker records and implement proper permissions, audit logs, KYC/AML and regulatory controls.</p></div></div>`;
-}
-function drawChart(){
- const c=document.getElementById("chart"); if(!c)return;
- const ctx=c.getContext("2d"), vals=[50000,57000,61000,68000,76000,84000,96000,111000,125000];
- ctx.clearRect(0,0,c.width,c.height);ctx.beginPath();ctx.lineWidth=3;
- const w=c.width= c.clientWidth*2, h=c.height=c.clientHeight*2;ctx.scale(2,2);
- const W=c.clientWidth,H=c.clientHeight,pad=25; 
- ctx.moveTo(pad,H-pad-(vals[0]-50000)/80000*(H-2*pad));
- vals.forEach((v,i)=>{const x=pad+i*(W-2*pad)/(vals.length-1),y=H-pad-(v-50000)/80000*(H-2*pad);if(i)ctx.lineTo(x,y)});ctx.stroke();
-}
-</script>
-</body></html>
+    <section id="opportunities" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">OPPORTUNITIES</p><h2>Choose where your capital goes.</h2></div>
+        <p>Explore categories by objective and risk. Availability and suitability will depend on the final regulated offering.</p>
+      </div>
+      <div class="cards">
+        <article class="op-card featured"><span class="tag">GLOBAL</span><h3>Global Equities</h3><p>Exposure to established companies and international markets.</p><div><span>Risk: Medium–High</span><span>Growth focus</span></div></article>
+        <article class="op-card"><span class="tag">DIVERSIFIED</span><h3>Multi-Asset</h3><p>A diversified approach across multiple asset classes.</p><div><span>Risk: Medium</span><span>Balanced focus</span></div></article>
+        <article class="op-card"><span class="tag">EMERGING</span><h3>Emerging Markets</h3><p>Access to selected developing economies and businesses.</p><div><span>Risk: High</span><span>Growth focus</span></div></article>
+      </div>
+    </section>
+
+    <section id="how" class="section dark-section">
+      <p class="eyebrow">THE AURVON EXPERIENCE</p>
+      <h2>Simple on the surface.<br><em>Serious underneath.</em></h2>
+      <div class="steps">
+        <div><b>01</b><h3>Create your account</h3><p>Set up your investor profile and complete required verification.</p></div>
+        <div><b>02</b><h3>Select an opportunity</h3><p>Review objectives, risk information and available options before investing.</p></div>
+        <div><b>03</b><h3>Monitor your portfolio</h3><p>Track contributions, withdrawals and portfolio values from one dashboard.</p></div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div><p class="eyebrow">ABOUT AURVON</p><h2>Capital deserves clarity.</h2></div>
+      <div><p>Aurvon is a brand concept for a modern investment platform. The platform should only offer products and services that are legally permitted, appropriately licensed and supported by required compliance controls.</p><a class="text-link" href="login.html">Open investor portal →</a></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark">A</span><span>AURVON</span></div>
+    <p>Growing capital. Building trust.</p>
+    <small>© 2026 Aurvon. This website is a platform concept and does not constitute an offer or solicitation to invest.</small>
+  </footer>
+</body>
+</html>
